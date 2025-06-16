@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Головна</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <%- include("partials/header") %>
+  <main>
+    <h1>Блог</h1>
+    <% if (posts.length === 0) { %>
+      <p>Постів поки немає. <a href="/compose">Напишіть перший!</a></p>
+    <% } else { %>
+      <% posts.forEach(post => { %>
+        <article class="post">
+          <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
+          <p><%= post.content.length > 100 ? post.content.slice(0, 100) + "..." : post.content %></p>
+          <div class="actions">
+            <a href="/edit/<%= post.id %>" class="btn">Редагувати</a>
+            <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+              <button type="submit" class="btn danger">Видалити</button>
+            </form>
+          </div>
+        </article>
+      <% }) %>
+    <% } %>
+  </main>
+</body>
+</html>

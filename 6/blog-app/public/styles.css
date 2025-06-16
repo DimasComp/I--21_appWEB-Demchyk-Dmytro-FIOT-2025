@@ -1,0 +1,179 @@
+/* Reset і базові налаштування */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Хедер */
+header {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #2575fc;
+  box-shadow: 0 0 8px #fff;
+}
+
+/* Головний контейнер */
+main {
+  width: 66.66vw;
+  max-width: 720px;
+  margin: 2rem auto 4rem;
+  padding: 2rem 3rem;
+  border: 2px solid white;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+}
+
+
+/* Заголовки */
+h1 {
+  font-weight: 700;
+  color: #2575fc;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* Пост */
+.post {
+  background: #f9faff;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 1.8rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(37,117,252,0.15);
+  transition: transform 0.25s ease;
+}
+
+.post:hover {
+  transform: translateY(-4px);
+}
+
+.post h2 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1.5rem;
+  color: #1a3d8f;
+}
+
+.post p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Дії під постом */
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* Кнопки */
+.btn {
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37,117,252,0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6a11cb;
+  box-shadow: 0 6px 20px rgba(106,17,203,0.7);
+}
+
+.btn.danger {
+  background-color: #ff4c4c;
+  box-shadow: 0 4px 15px rgba(255,76,76,0.6);
+}
+
+.btn.danger:hover {
+  background-color: #cc0000;
+  box-shadow: 0 6px 20px rgba(204,0,0,0.8);
+}
+
+/* Форми */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #2575fc;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106,17,203,0.6);
+}
+
+/* Посилання у тексті */
+a {
+  color: #2575fc;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #6a11cb;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  nav {
+    gap: 1rem;
+  }
+  .post h2 {
+    font-size: 1.3rem;
+  }
+}

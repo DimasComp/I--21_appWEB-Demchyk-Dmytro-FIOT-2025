@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Новий пост</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <%- include("partials/header") %>
+  <main>
+    <h1>Написати новий пост</h1>
+    <form action="/compose" method="POST">
+      <input type="text" name="postTitle" placeholder="Заголовок" required />
+      <textarea name="postBody" placeholder="Текст посту..." rows="10" required></textarea>
+      <button type="submit" class="btn">Опублікувати</button>
+    </form>
+  </main>
+</body>
+</html>
