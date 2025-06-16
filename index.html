@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Звіт з курсу</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      background: linear-gradient(135deg, #2C3E50, #4CA1AF);
+      color: #f0f0f0;
+    }
+    
+    aside {
+      background: #16222A;
+      width: 280px;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      border-right: 2px solid #3E576F;
+      box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+    }
+    
+    aside button {
+      background: #4CA1AF;
+      border: none;
+      border-radius: 30px;
+      padding: 14px 0;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #16222A;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 4px 6px rgba(76,161,175,0.4);
+      line-height: 1.2;
+      white-space: pre-line;
+      user-select: none;
+    }
+    
+    aside button:hover {
+      background: #3B8C95;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(59,140,149,0.6);
+    }
+    
+    aside button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+    
+    main {
+      flex: 1;
+      padding: 40px 60px;
+      position: relative;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .header h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    
+    .header p {
+      font-size: 1.2rem;
+      color: #B0D1D8;
+      font-weight: 500;
+    }
+    
+    .student-info {
+      display: flex;
+      justify-content: space-between;
+      background: #3B8C95;
+      padding: 18px 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      user-select: none;
+    }
+    
+    #content {
+  background: #16222A;
+  padding: 30px 40px;
+  border-radius: 25px;
+  border: 2px solid #4CA1AF;
+  min-height: 600px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  box-shadow: 0 0 20px #4CA1AF;
+  overflow-wrap: break-word;
+  overflow-y: auto;    
+  max-height: 80vh;    
+
+    
+    #content a {
+      color: #4CA1AF;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    
+    #content a:hover {
+      color: #82CEDF;
+      text-decoration: underline;
+    }
+    
+    #content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    #content ul li {
+      margin-bottom: 15px;
+    }
+    
+    #content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 15px rgba(76,161,175,0.5);
+      border: 1px solid #4CA1AF;
+    }
+  </style>
+</head>
+<body>
+
+  <aside>
+    <button onclick="showContent('course')">НАЗВА КУРСУ<br>Посилання на курс</button>
+    <button onclick="showContent('repos')">Посилання<br>на репозиторій</button>
+    <button onclick="showContent('certificate')">СЕРТИФІКАТ<br>з БАЛАМИ</button>
+    <button onclick="showContent('tasks')">Посилання<br>на завдання</button>
+    <button onclick="showContent('conclusion')">ВИСНОВКИ</button>
+  </aside>
+
+  <main>
+    <div class="header">
+      <h2>ЗВІТ</h2>
+      <p>з дисципліни «WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБОК»</p>
+    </div>
+
+    <div class="student-info">
+      <div>Студент гр. </div>
+      <div>Демчик Дмитро Сергійович</div>
+    </div>
+
+    <div id="content">Місце виведення інформації</div>
+  </main>
+
+  <script>
+    function showContent(section) {
+      const content = document.getElementById("content");
+      switch (section) {
+        case 'course':
+          content.innerHTML = `
+            <h3>Назва курсу:</h3>
+            <p>The Complete Full-Stack Web Development Bootcamp</p>
+            <p><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?srsltid=AfmBOorTuVRrnQLQSCbT-kZ2khJeWXgTDmqM0X1fm6xUvjwvylH-BslP&couponCode=ST21MT30625G2" target="_blank" rel="noopener noreferrer">Перейти до курсу</a></p>
+          `;
+          break;
+        case 'repos':
+          content.innerHTML = `
+            <h3>Посилання на репозиторій:</h3>
+            <ul>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+          `;
+          break;
+        case 'certificate':
+          content.innerHTML = `
+            <h3>Сертифікат</h3>
+            <img src="ser.jpg" alt="Сертифікат" />
+          `;
+          break;
+        case 'tasks':
+          content.innerHTML = `
+            <h3>Посилання на завдання:</h3>
+            <ul>
+              <li><a href="1/" target="_blank" rel="noopener noreferrer">Завдання 1. Резюме</a></li>
+              <li><a href="2/" target="_blank" rel="noopener noreferrer">Завдання 2. Сторінка Майкла Джексона з CSS</a></li>
+              <li><a href="3 dicee/Dicee Challenge/" target="_blank" rel="noopener noreferrer">Завдання 3. Гра Dicee</a></li>
+              <li><a href="4 Drum Kit/Drum Kit/" target="_blank" rel="noopener noreferrer">Завдання 4. Гра на барабанах</a></li>
+              <li><a href="5 Simon/Simon/" target="_blank" rel="noopener noreferrer">Завдання 5. Гра Simon</a></li>
+              <li>
+                <h4>Завдання 6. Сторінка есе на Node.js</h4>
+                <img src="6.jpg" alt="Завдання 6" />
+              </li>
+              <li>
+                <h4>Завдання 7. API для книг, React</h4>
+                <img src="7.jpg" alt="Завдання 7" />
+              </li>
+            </ul>
+          `;
+          break;
+        case 'conclusion':
+          content.innerHTML = `
+            <h3>Висновки:</h3>
+            <p>Отримані знання дозволили створювати інтерактивні веб-додатки з базовим backend.</p>
+          `;
+          break;
+        default:
+          content.textContent = "Місце виведення інформації";
+      }
+    }
+  </script>
+
+</body>
+</html>
