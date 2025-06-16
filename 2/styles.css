@@ -1,0 +1,140 @@
+/* Скидання стилів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Verdana', sans-serif;
+  background-color: #f0f0f5;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+/* Контейнер для всієї сторінки */
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Бокова панель */
+.sidebar {
+  background-color: #222;
+  color: #fff;
+  padding: 2rem;
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right: 4px solid #c90c0f;
+}
+
+/* Основний контент */
+.content {
+  flex-grow: 1;
+  padding: 3rem;
+}
+
+/* Секції */
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #c90c0f;
+  border-bottom: 2px solid #c90c0f;
+  padding-bottom: 0.3rem;
+}
+
+/* Hero-блок */
+.hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text {
+  flex: 1 1 55%;
+}
+
+.hero-image {
+  flex: 1 1 35%;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  border: 4px solid #c90c0f;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Списки */
+ul {
+  list-style: disc inside;
+  margin-top: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Посилання */
+a {
+  color: #c90c0f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Параграфи */
+section p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 4px solid #c90c0f;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 70%;
+  }
+}
